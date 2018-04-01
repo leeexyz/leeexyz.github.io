@@ -1,4 +1,8 @@
-# 学习Markdown语法
+---
+layout: post
+title: 学习Markdown语法
+tags: [skill]
+---
 [Markdown](https://zh.wikipedia.org/wiki/Markdown)是一种轻量级标记性语言，由于其纯文本标记的特性，非常容易学习和掌握。本文就是学习Markdown的第一次实践。
 
 #### 为什么要学习它?
