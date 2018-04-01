@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "https://leeexy.github.io"
+url: "https://leeexyz.github.io"
 title: leexyz's blog # site's title
 description: "A personal blog for learning" # used by search engines
 
@@ -15,10 +15,10 @@ theme_settings:
 
   # Header and footer text
   header_text: > #two or three lines to describe your site
-     <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
+     <p>If not now, when? If not you, who?</p>
   header_text_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a>
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
@@ -29,7 +29,7 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: "sylhare"
+  github: "leeexyz"
   google_plus:
   instagram:
   keybase:
@@ -44,6 +44,7 @@ theme_settings:
   vimeo:
   wordpress:
   youtube:
+  weibo:
 
   # Scripts / Features 
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
