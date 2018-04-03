@@ -1,16 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Type on Strap</title>
-        <atom:link href="/Type-on-Strap/feed.xml" rel="self" type="application/rss+xml"/>
-        <link>http://localhost:4000/Type-on-Strap/</link>
+        <title>leexyz's blog</title>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <link>http://localhost:4000/</link>
         <description></description>
-        <pubDate>Sun, 01 Apr 2018 22:42:08 +0800</pubDate>
+        <pubDate>Tue, 03 Apr 2018 22:57:34 +0800</pubDate>
+        
+        <item>
+            <title>学习Markdown语法</title>
+            <link>/2016/12/03/%E5%AD%A6%E4%B9%A0Markdown%E8%AF%AD%E6%B3%95.html</link>
+            <guid isPermaLink="true">/2016/12/03/%E5%AD%A6%E4%B9%A0Markdown%E8%AF%AD%E6%B3%95.html</guid>
+            <description>&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt;是一种轻量级标记性语言，由于其纯文本标记的特性，非常容易学习和掌握。本文就是学习Markdown的第一次实践。&lt;/p&gt;
+
+&lt;h4 id=&quot;为什么要学习它&quot;&gt;为什么要学习它?&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;现在很多主流的网站都使用Markdown书写，如：Github、Stackoverflow；&lt;/li&gt;
+  &lt;li&gt;学习起来非常容易，基本的Markdown只有十几种，学习曲线容易；&lt;/li&gt;
+  &lt;li&gt;Markdown的文本能够很容易得转化成HTML；&lt;/li&gt;
+  &lt;li&gt;当然，最重要的还是能够帮助开发者更高效、更友好的开发文档。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;选择书写工具&quot;&gt;选择书写工具&lt;/h4&gt;
+&lt;p&gt;Markdown对于编辑器没有特别的要求，可以根据自己的喜好选择诸如：Notepad++、Subline、Vim、Emacs等。对我而言，还是钟爱Vim作为编辑器：）那么，下面就讲一讲我都在Vim中配置了哪些插件加快Markdown的书写效率。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;配置~/.vimrc文件
+    &lt;ol&gt;
+      &lt;li&gt;第一步配置&lt;a href=&quot;https://github.com/VundleVim/Vundle.vim&quot;&gt;Vundle&lt;/a&gt;来管理Vim插件，本文不详述；&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;添加三个插件（&lt;a href=&quot;https://github.com/godlygeek/tabular&quot;&gt;tabular&lt;/a&gt;、&lt;a href=&quot;https://github.com/plasticboy/vim-markdown&quot;&gt;vim-markdown&lt;/a&gt;、&lt;a href=&quot;https://github.com/suan/vim-instant-markdown&quot;&gt;vim-instant-markdown&lt;/a&gt;）：&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot; Markdown Support Markdown语法支持
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+&quot; Markdown Preview Markdown预览支持
+Plugin 'suan/vim-instant-markdown'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;安装插件;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;:PluginInstall&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;可以按照自己的喜好进行配置，这里是作者自己定制的&lt;a href=&quot;https://gist.github.com/ColdinLee/dfffea3d9cad4f2501ec8fd299ece22a&quot;&gt;.vimrc&lt;/a&gt;文件，大家可以参考。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;markdown基本语法&quot;&gt;Markdown基本语法&lt;/h3&gt;
+&lt;h4 id=&quot;粗体和斜体&quot;&gt;粗体和斜体&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在这一段话中，你可以看到粗体和斜体的简单用法。当你在书写文档的时候，想要**强调**一些内容，或者引用一些比如：书籍、词语等，可以采用*斜体*字。Markdonw中实现这些非常的容易。你甚至可以将它们***组合***在一起使用。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在这一段话中，你可以看到粗体和斜体的简单用法。当你在书写文档的时候，想要&lt;strong&gt;强调&lt;/strong&gt;一些内容，或者引用一些比如：书籍、词语等，可以采用&lt;em&gt;斜体&lt;/em&gt;字。Markdonw中实现这些非常的容易。你甚至可以将它们&lt;strong&gt;&lt;em&gt;组合&lt;/em&gt;&lt;/strong&gt;在一起使用。&lt;/p&gt;
+
+&lt;h4 id=&quot;标题&quot;&gt;标题&lt;/h4&gt;
+&lt;p&gt;当你想要更改标题的类型时，可以选择这样的方式：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这些分别对应HTML中的h1到h6，但是这里需要注意的是，不要忘记#号后面的空格。&lt;/p&gt;
+
+&lt;h1 id=&quot;一级标题&quot;&gt;一级标题&lt;/h1&gt;
+&lt;h2 id=&quot;二级标题&quot;&gt;二级标题&lt;/h2&gt;
+&lt;h3 id=&quot;三级标题&quot;&gt;三级标题&lt;/h3&gt;
+&lt;h4 id=&quot;四级标题&quot;&gt;四级标题&lt;/h4&gt;
+&lt;h5 id=&quot;五级标题&quot;&gt;五级标题&lt;/h5&gt;
+&lt;h6 id=&quot;六级标题&quot;&gt;六级标题&lt;/h6&gt;
+&lt;h4 id=&quot;超链接&quot;&gt;超链接&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;有时，你也许会加入一些超链接，方便跳转。你可以这样做：[点击这里进入Github](www.github.com)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;有时，你也许会加入一些超链接，方便跳转。你可以这样做：&lt;a href=&quot;www.github.com&quot;&gt;点击这里进入Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;除了上面的方法，还有另外一种方法也可以创建超链接。可以[谷歌][标签]搜索Markdown超链接，总之[谷歌2][标签]可是学习的必备工具。
+
+[标签]: www.google.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;除了上面的方法，还有另外一种方法也可以创建超链接。可以&lt;a href=&quot;www.google.com&quot;&gt;谷歌&lt;/a&gt;搜索Markdown超链接，总之&lt;a href=&quot;www.google.com&quot;&gt;谷歌2&lt;/a&gt;可是学习的必备工具。&lt;/p&gt;
+
+&lt;h4 id=&quot;换行&quot;&gt;换行&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;当需要换行时候，可以采用两种方式。一种是：直接在一行的结尾加入两个空格（用--表示）--
+或者只能强制在两行之间加入一个
+
+空行。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当需要换行时候，可以采用两种方式。一种是：直接在一行的结尾加入两个空格 
+或者只能强制在两行之间加入一个&lt;/p&gt;
+
+&lt;p&gt;空行。&lt;/p&gt;
+
+&lt;h4 id=&quot;有序列表和无序列表&quot;&gt;有序列表和无序列表&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;列表是一种常用的表现方式，特别是当你需要概括、总结要点时：
+* 当观点没有顺序之分；
+  * 举例一；
+  * 举例二；
+* 重要程度相仿时；
+* 可以采用这种方式；
+  1. 有序事例一；
+  2. 有序事例二；
+* 但是不要忘记*号后面的空格。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;列表是一种常用的表现方式，特别是当你需要概括、总结要点时：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;当观点没有顺序之分；
+    &lt;ul&gt;
+      &lt;li&gt;举例一；&lt;/li&gt;
+      &lt;li&gt;举例二；&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;重要程度相仿时；&lt;/li&gt;
+  &lt;li&gt;可以采用这种方式；
+    &lt;ol&gt;
+      &lt;li&gt;有序事例一；&lt;/li&gt;
+      &lt;li&gt;有序事例二；&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;但是不要忘记*号后面的空格。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;引用&quot;&gt;引用&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;当你引用到其他作者的话语时，可以采用这样的方式：
+&amp;gt;这里都是引用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当你引用到其他作者的话语时，可以采用这样的方式：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这里都是引用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;代码支持&quot;&gt;代码支持&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;当然，最最重要的莫过于代码引用、代码高亮。如下是一个Github风格的语法高亮（三个空格缩进）：  
+   ```python
+   def hello_vim_markdown():
+       print &quot;hello Markdown!&quot;
+   ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当然，最最重要的莫过于代码引用、代码高亮。如下是一个Github风格的语法高亮（三个空格缩进）：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello_vim_markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello Markdown!&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;写在最后&quot;&gt;写在最后&lt;/h4&gt;
+&lt;p&gt;虽然这里只是简单介绍了常用的Markdown语法，但也要勤加练习才能熟练运用。除此之外，Markdown还存在许多其他强大的扩展，期待你的学习和发现。:)&lt;/p&gt;
+</description>
+            <pubDate>Sat, 03 Dec 2016 00:00:00 +0800</pubDate>
+        </item>
         
         <item>
             <title>Sample post</title>
-            <link>/Type-on-Strap/2014/11/30/sample-post.html</link>
-            <guid isPermaLink="true">/Type-on-Strap/2014/11/30/sample-post.html</guid>
+            <link>/2014/11/30/sample-post.html</link>
+            <guid isPermaLink="true">/2014/11/30/sample-post.html</guid>
             <description>&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
 Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
 &lt;!--more--&gt;
@@ -41,8 +196,8 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         
         <item>
             <title>Feature images</title>
-            <link>/Type-on-Strap/2014/11/29/feature-images.html</link>
-            <guid isPermaLink="true">/Type-on-Strap/2014/11/29/feature-images.html</guid>
+            <link>/2014/11/29/feature-images.html</link>
+            <guid isPermaLink="true">/2014/11/29/feature-images.html</guid>
             <description>&lt;p&gt;This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.&lt;/p&gt;
 
 </description>
@@ -51,8 +206,8 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         
         <item>
             <title>Markdown and HTML</title>
-            <link>/Type-on-Strap/2014/11/28/markdown-and-html.html</link>
-            <guid isPermaLink="true">/Type-on-Strap/2014/11/28/markdown-and-html.html</guid>
+            <link>/2014/11/28/markdown-and-html.html</link>
+            <guid isPermaLink="true">/2014/11/28/markdown-and-html.html</guid>
             <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
 
 &lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
@@ -78,7 +233,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
 
 &lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/Type-on-Strap/assets/img/pexels/book-glass.jpeg&quot; alt=&quot;Image of a glass on a book&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/pexels/book-glass.jpeg&quot; alt=&quot;Image of a glass on a book&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Highlighting for code in Jekyll is done using Base16 or Rouge. This theme makes use of Rouge by default.&lt;/p&gt;
 
@@ -105,8 +260,8 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         
         <item>
             <title>Markup: Syntax Highlighting</title>
-            <link>/Type-on-Strap/2014/08/08/Markup-Syntax-Highlighting.html</link>
-            <guid isPermaLink="true">/Type-on-Strap/2014/08/08/Markup-Syntax-Highlighting.html</guid>
+            <link>/2014/08/08/Markup-Syntax-Highlighting.html</link>
+            <guid isPermaLink="true">/2014/08/08/Markup-Syntax-Highlighting.html</guid>
             <description>&lt;p&gt;From Michael’s Rose &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/markup-syntax-highlighting&quot;&gt;Minimal Mistakes&lt;/a&gt;.
 Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. &lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;Highlighting&lt;/a&gt; does not affect the meaning of the text itself; it is intended only for human readers.&lt;/p&gt;
 
@@ -198,8 +353,8 @@ Syntax highlighting is a feature that displays source code, in different colors 
         
         <item>
             <title>Blogging with title</title>
-            <link>/Type-on-Strap/2013/11/18/blogging-with-title.html</link>
-            <guid isPermaLink="true">/Type-on-Strap/2013/11/18/blogging-with-title.html</guid>
+            <link>/2013/11/18/blogging-with-title.html</link>
+            <guid isPermaLink="true">/2013/11/18/blogging-with-title.html</guid>
             <description>&lt;h1 id=&quot;i-am-a-big-title&quot;&gt;I am a BIG title&lt;/h1&gt;
 
 &lt;p&gt;This is a very tiny tiny post with less than 250 letters.&lt;/p&gt;

@@ -2,7 +2,7 @@
 baseurl: ""
 url: "https://leeexyz.github.io"
 title: leexyz's blog # site's title
-description: "A personal blog for learning" # used by search engines
+description: "Life is short." # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
@@ -22,7 +22,7 @@ theme_settings:
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: "cy-l@live.com" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
@@ -31,7 +31,7 @@ theme_settings:
   gitlab:
   github: "leeexyz"
   google_plus:
-  instagram:
+  instagram: 
   keybase:
   linkedin:  # Full URL
   pinterest:
@@ -40,11 +40,11 @@ theme_settings:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: # "twitter username"
+  twitter: "9334887" # "twitter username"
   vimeo:
   wordpress:
   youtube:
-  weibo:
+  weibo: "https://weibo.com/u/1931250477"
 
   # Scripts / Features 
   google_analytics: # Tracking ID, e.g. "UA-000000-01"

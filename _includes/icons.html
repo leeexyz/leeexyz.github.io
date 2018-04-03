@@ -250,3 +250,14 @@
 	</a>
 </li>
 {% endif %}
+
+{% if site.theme_settings.weibo %}
+<li>
+	<a href="{{ site.theme_settings.weibo }}" title="{{ site.theme_settings.str_follow_on }} WeiBo">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+{% endif %}
