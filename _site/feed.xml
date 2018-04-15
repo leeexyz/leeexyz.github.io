@@ -5,12 +5,12 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://localhost:4000/</link>
         <description></description>
-        <pubDate>Sun, 15 Apr 2018 11:20:54 +0800</pubDate>
+        <pubDate>Sun, 15 Apr 2018 11:38:18 +0800</pubDate>
         
         <item>
-            <title>初识LaTeX数学公式</title>
-            <link>/2018/04/14/learning-latex.html</link>
-            <guid isPermaLink="true">/2018/04/14/learning-latex.html</guid>
+            <title>初识LaTeX数学公式编辑</title>
+            <link>/2018/04/14/learning-latex-math-and-equation.html</link>
+            <guid isPermaLink="true">/2018/04/14/learning-latex-math-and-equation.html</guid>
             <description>&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/LaTeX&quot;&gt;LaTeX&lt;/a&gt;是一种基于TeX的排版系统，其将内容编写与排版呈现完全分离，使得文档书写者只需使用简单的文档结构标签，让LaTeX系统负责这些结构的格式和布局，从更加专注于内容的创作，而不必关心如何进行布局排版。需要特别指出的是，LaTeX在复杂数学公式、表格书写方面，非常的强大，可以大大加快此类场景的书写效率。本文就是在学习LaTeX过程中的一些总结。&lt;/p&gt;
 
 &lt;h2 id=&quot;latex介绍&quot;&gt;LaTeX介绍&lt;/h2&gt;
@@ -194,7 +194,7 @@ A &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quo
 
 &lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
 
-&lt;p&gt;LaTeX就是如此简单、强大！通过学习基本的LaTeX数学公式编辑方法，就能基本满足日常写Blog时的公式推导，算法描述。不过LaTeX可远不止如此，它甚至可以用来用画复杂图形、写复杂化学物质、甚至棋谱等。还有更多的有趣的场景待你发现。:)&lt;/p&gt;
+&lt;p&gt;LaTeX就是如此简单、强大！通过学习基本的LaTeX数学公式编辑方法，就能基本满足日常写Blog时的公式推导，算法描述。不过LaTeX可远不止如此，它甚至可以用来用画复杂图形、写复杂化学物质、甚至绘制棋谱、创作五线谱等。当然，这些有趣的场景都等待着你的学习和发现。:)&lt;/p&gt;
 
 &lt;h4 id=&quot;参考文献&quot;&gt;参考文献&lt;/h4&gt;
 &lt;ol&gt;

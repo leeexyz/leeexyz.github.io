@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 初识LaTeX数学公式
+title: 初识LaTeX数学公式编辑
 tags: [skill]
 ---
 
