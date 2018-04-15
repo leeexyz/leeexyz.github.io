@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://localhost:4000/2018/04/14/learning-latex.html">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="leexyz's blog" href="http://localhost:4000///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css"> 
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/katex.min.css">
+    <script src="/assets/js/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+    
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>初识LaTeX数学公式 | leexyz’s blog</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="初识LaTeX数学公式" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="LaTeX是一种基于TeX的排版系统，其将内容编写与排版呈现完全分离，使得文档书写者只需使用简单的文档结构标签，让LaTeX系统负责这些结构的格式和布局，从更加专注于内容的创作，而不必关心如何进行布局排版。需要特别指出的是，LaTeX在复杂数学公式、表格书写方面，非常的强大，可以大大加快此类场景的书写效率。本文就是在学习LaTeX过程中的一些总结。" />
+<meta property="og:description" content="LaTeX是一种基于TeX的排版系统，其将内容编写与排版呈现完全分离，使得文档书写者只需使用简单的文档结构标签，让LaTeX系统负责这些结构的格式和布局，从更加专注于内容的创作，而不必关心如何进行布局排版。需要特别指出的是，LaTeX在复杂数学公式、表格书写方面，非常的强大，可以大大加快此类场景的书写效率。本文就是在学习LaTeX过程中的一些总结。" />
+<link rel="canonical" href="http://localhost:4000/2018/04/14/learning-latex.html" />
+<meta property="og:url" content="http://localhost:4000/2018/04/14/learning-latex.html" />
+<meta property="og:site_name" content="leexyz’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-14T00:00:00+08:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/2018/04/14/learning-latex.html","description":"LaTeX是一种基于TeX的排版系统，其将内容编写与排版呈现完全分离，使得文档书写者只需使用简单的文档结构标签，让LaTeX系统负责这些结构的格式和布局，从更加专注于内容的创作，而不必关心如何进行布局排版。需要特别指出的是，LaTeX在复杂数学公式、表格书写方面，非常的强大，可以大大加快此类场景的书写效率。本文就是在学习LaTeX过程中的一些总结。","headline":"初识LaTeX数学公式","dateModified":"2018-04-14T00:00:00+08:00","datePublished":"2018-04-14T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/04/14/learning-latex.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>初识LaTeX数学公式 | leexyz's blog</title>
+    <meta name="description" content="LaTeX是一种基于TeX的排版系统，其将内容编写与排版呈现完全分离，使得文档书写者只需使用简单的文档结构标签，让LaTeX系统负责这些结构的格式和布局，从更加专注于内容的创作，而不必关心如何进行布局排版。需要特别指出的是，LaTeX在复杂数学公式、表格书写方面，非常的强大，可以大大加快此类场景的书写效率。本文就...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+    
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/triangle.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">leexyz's blog</a>
+		</h1>
+	</div>
+    
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+    
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li class="separator">
+            |
+        </li>
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         
+        
+        <li class="separator">
+            |
+        </li>
+        <li>
+            <a class="clear" href="http://localhost:4000/portfolio">
+                Portfolio
+            </a>
+        </li>
+        
+        
+        <li class="separator">
+            |
+        </li>
+        <li>
+            <a class="clear" href="http://localhost:4000/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+        <li class="separator">
+            |
+        </li>
+        <li>
+            <a class="clear" href="http://localhost:4000/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+    </ul>
+        
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="background-image: url('/')">
+    <h1 id="%E5%88%9D%E8%AF%86LaTeX%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F" class="title">初识LaTeX数学公式</h1>
+    <p class="meta">
+    April 14, 2018
+    
+    </p>
+  </header>
+  <section class="post-content"><p><a href="https://zh.wikipedia.org/wiki/LaTeX">LaTeX</a>是一种基于TeX的排版系统，其将内容编写与排版呈现完全分离，使得文档书写者只需使用简单的文档结构标签，让LaTeX系统负责这些结构的格式和布局，从更加专注于内容的创作，而不必关心如何进行布局排版。需要特别指出的是，LaTeX在复杂数学公式、表格书写方面，非常的强大，可以大大加快此类场景的书写效率。本文就是在学习LaTeX过程中的一些总结。</p>
+
+<h2 id="latex介绍">LaTeX介绍</h2>
+
+<p>对于我们大多数人来说，KeyNote、MS Word等文字处理工具就已经能够满足大多数使用场景了，且这类工具都非常直观、易用，学习曲线也较为容易。而对比LaTeX，它其实更像是一门“编程语言“，存在一定的学习曲线，需要记忆不少符号来满足特定的需要。</p>
+
+<p>说到这里，你可能觉得为什么要费时费力学习它呢？LaTeX作为较为专业的排版系统，目前在国内仍是比较小众的，但其在国外高校、出版社是非常流行的。正是因为其强大的功能，几乎能够实现你想要的任何东西，才会被大家所青睐。如果你是一个对文档要求很高的创作者，或者是想要一窥究竟的好奇者，那么就应该去了解一下这门神奇语言！</p>
+
+<h2 id="katex介绍">KaTeX介绍</h2>
+<p>KaTeX是一个在前端通过LaTeX语法展示数学公式的JS项目（类似的还有MathJax），它的特点是API非常简单、没有任何依赖以及浏览侧快速渲染。<a href="https://khan.github.io/KaTeX/">主页</a>。</p>
+
+<p><strong>注：本文主要聚焦于如何用KaTeX实现数学公式，用以书写Blog。其他关于LaTex的学习资料见文末。</strong></p>
+
+<h2 id="数学公式编辑">数学公式编辑</h2>
+
+<h3 id="准备工作">准备工作</h3>
+<ul>
+  <li>准备本地LaTeX环境
+    <ol>
+      <li>安装LaTeX。可以从LaTeX项目的官网获取；<a href="https://www.latex-project.org/get/">链接</a></li>
+      <li>启动LaTeXiT。LaTeX iT顾名思义，就是直接将对应的LaTeX语句转化为显示结果（可另存为图片格式）；</li>
+    </ol>
+  </li>
+  <li>使用KaTex或MathJaX在线编辑
+    <ol>
+      <li>Markdown和LaTeX在线编辑器。<a href="https://upmath.me/">链接</a></li>
+      <li>在前端展示数学公式，可以使用KaTex或MathJaX。<a href="https://www.intmath.com/cg5/katex-mathjax-comparison.php">链接</a>（关于两者渲染速度的对比）。</li>
+    </ol>
+  </li>
+</ul>
+
+<p>KaTeX支持大部分常用的数学语言，可以满足日常记录Blog。具体KaTeX对LaTeX的支持情况见<a href="https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-%28yet%29-support">链接</a>。</p>
+
+<h3 id="单行多行输出">单行多行输出</h3>
+
+<p>在KaTeX（MathJaX）中默认所有的数学公式都是在<code class="highlighter-rouge">$$ ... $$</code>之间。</p>
+
+<p>如：要在行内书写正弦函数<script type="math/tex">f(x) = \sin{2x}</script>，对应于</p>
+
+<p>若要整行书写，则为：</p>
+
+<script type="math/tex; mode=display">f(x) = \cos{2\pi}</script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\cos</span><span class="p">{</span><span class="m">2</span><span class="nv">\pi</span><span class="p">}</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<p>有时在推导公式时，需要连续多行输出，可以使用<code class="highlighter-rouge">\begin{aligned} ... \end{aligned}</code>。</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+f(x) & = & \sin(2\pi - x) \\ 
+     & = & \sin(x) 
+\end{aligned} %]]></script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> 
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">aligned</span><span class="p">}</span><span class="nb">
+f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\sin</span><span class="o">(</span><span class="m">2</span><span class="nv">\pi</span><span class="nb"> </span><span class="o">-</span><span class="nb"> x</span><span class="o">)</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> 
+     </span><span class="p">&amp;</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\sin</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> 
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">aligned</span><span class="p">}</span><span class="nb">
+</span><span class="p">$$</span>
+</code></pre></div></div>
+
+<p>或者一些更加复杂的公式 <script type="math/tex">\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)</script></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">k</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n a</span><span class="p">_</span><span class="nb">k b</span><span class="p">_</span><span class="nb">k </span><span class="nv">\right</span><span class="o">)</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\leq</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">k</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n a</span><span class="p">_</span><span class="nb">k</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">k</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n b</span><span class="p">_</span><span class="nb">k</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<h3 id="幂和下标">幂和下标</h3>
+
+<p>幂和下标的表示使用的也是直觉化的方式，<strong>^</strong>表示幂次，<strong>_</strong>表示下标。若幂或下标涉及多个表达式，可以使用括号<strong>{ … }</strong>和<strong>( … )</strong>。</p>
+
+<script type="math/tex; mode=display">k_{n+1} = k_{n}^2 + 1</script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> k</span><span class="p">_{</span><span class="nb">n</span><span class="o">+</span><span class="m">1</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> k</span><span class="p">_{</span><span class="nb">n</span><span class="p">}^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<h3 id="分数与二项式">分数与二项式</h3>
+
+<p>分数的书写使用<code class="highlighter-rouge">\frac{分子}{分母}</code>。类似的二项式使用<code class="highlighter-rouge">\binom{n}{k}</code>。</p>
+
+<script type="math/tex; mode=display">\binom{n}{k} = \frac{n!}{(n-k)!k!}</script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> </span><span class="nv">\binom</span><span class="p">{</span><span class="nb">n</span><span class="p">}{</span><span class="nb">k</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="p">{</span><span class="nb">n</span><span class="o">!</span><span class="p">}{</span><span class="o">(</span><span class="nb">n</span><span class="o">-</span><span class="nb">k</span><span class="o">)!</span><span class="nb">k</span><span class="o">!</span><span class="p">}</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<p>如果要在行内写诸如<script type="math/tex">\bar{x} = \sum_{n=1}^N{x_n}/{N}</script>的式子，可以采用<code class="highlighter-rouge">{分子}{分母}</code>的形式。</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> </span><span class="nv">\bar</span><span class="p">{</span><span class="nb">x</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">n</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">N</span><span class="p">{</span><span class="nb">x</span><span class="p">_</span><span class="nb">n</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">N</span><span class="p">}</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<h3 id="积分与微分">积分与微分</h3>
+<p>积分与微分是我们常常需要书写的形式，在KaTex中书写也是非常简单的。积分<code class="highlighter-rouge">\int_{上限}^{下限}</code>。</p>
+
+<script type="math/tex; mode=display">f(x) = \int_0^{\infty} e^x dx</script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\int</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\infty</span><span class="p">}</span><span class="nb"> e</span><span class="p">^</span><span class="nb">x dx </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<p>而微分则是通过分数或者Nabla算子的方式表达。</p>
+
+<script type="math/tex; mode=display">{df(x)}/{x} = e^x |_0^{\infty}</script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> </span><span class="p">{</span><span class="nb">df</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nb">x</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> e</span><span class="p">^</span><span class="nb">x |</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\infty</span><span class="p">}</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<script type="math/tex; mode=display">\nabla = \left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right)</script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb"> </span><span class="nv">\nabla</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\partial</span><span class="p">}{</span><span class="nv">\partial</span><span class="nb"> x</span><span class="p">}</span><span class="nb">, </span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\partial</span><span class="p">}{</span><span class="nv">\partial</span><span class="nb"> y</span><span class="p">}</span><span class="nb">, </span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\partial</span><span class="p">}{</span><span class="nv">\partial</span><span class="nb"> z</span><span class="p">}</span><span class="nb"> </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="p">$$</span>
+</code></pre></div></div>
+
+<h3 id="矩阵">矩阵</h3>
+
+<p>矩阵的书写方式也是比较相似的，<code class="highlighter-rouge">\begin{bmatrix} ... \end{bmatrix}</code>。这里只选择一种作为范例，其他的类型可以参见<a href="https://khan.github.io/KaTeX/function-support.html#environments">KaTeX支持的矩阵表达方式</a>。</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A = \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{bmatrix} %]]></script>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb">
+A </span><span class="o">=</span><span class="nb"> </span><span class="nv">\begin</span><span class="p">{</span><span class="nb">bmatrix</span><span class="p">}</span><span class="nb">
+      </span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+      </span><span class="m">0</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+      </span><span class="m">0</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">1</span><span class="nb">
+    </span><span class="nv">\end</span><span class="p">{</span><span class="nb">bmatrix</span><span class="p">}</span><span class="nb">
+</span><span class="p">$$</span>
+</code></pre></div></div>
+
+<h3 id="其他数学符号">其他数学符号</h3>
+
+<p>LaTeX本身有非常多的数学公式、符号书写方式，前面只是简单讲述了几种常用的情形，下面在简单汇总下常用的一些数学符号，方便日常使用。:)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>符号</th>
+      <th>命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><script type="math/tex">\sqrt{x}</script></td>
+      <td><code class="highlighter-rouge">\sqrt{x}</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\sqrt[3]{x}</script></td>
+      <td><code class="highlighter-rouge">\sqrt[3]{x}</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\Delta \Theta \Lambda \Pi \Sigma \Phi \Psi \Omega</script></td>
+      <td><code class="highlighter-rouge">\Delta \Theta \Lambda \Pi \Sigma \Phi \Psi \Omega</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\varDelta \varTheta \varLambda \varPi \varSigma \varPhi \varPsi \varOmega</script></td>
+      <td><code class="highlighter-rouge">\varDelta \varTheta \varLambda \varPi \varSigma \varPhi \varPsi \varOmega</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\alpha \beta \gamma \delta \epsilon \zeta \eta \theta \lambda \mu</script></td>
+      <td><code class="highlighter-rouge">\alpha \beta \gamma \delta \epsilon \zeta \eta \theta \lambda \mu</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\sigma \upsilon \phi \chi \psi \omega \varepsilon \varsigma \varphi</script></td>
+      <td><code class="highlighter-rouge">\sigma \upsilon \phi \chi \psi \omega \varepsilon \varsigma \varphi</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\partial \nabla</script></td>
+      <td><code class="highlighter-rouge">\partial \nabla</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\forall x \in X</script></td>
+      <td><code class="highlighter-rouge">\forall x \in X</code></td>
+    </tr>
+    <tr>
+      <td><script type="math/tex">\exists y \leq \epsilon</script></td>
+      <td><code class="highlighter-rouge">\quad \exists y \leq \epsilon</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="总结">总结</h2>
+
+<p>LaTeX就是如此简单、强大！通过学习基本的LaTeX数学公式编辑方法，就能基本满足日常写Blog时的公式推导，算法描述。不过LaTeX可远不止如此，它甚至可以用来用画复杂图形、写复杂化学物质、甚至棋谱等。还有更多的有趣的场景待你发现。:)</p>
+
+<h4 id="参考文献">参考文献</h4>
+<ol>
+  <li>维基百科。介绍了LaTeX的历史，以及和TeX的关系。<a href="https://en.wikipedia.org/wiki/LaTeX">链接</a></li>
+  <li>KaTaX项目。本文使用的LaTeX前端数学公式实现JS，可以参考Github项目。<a href="https://khan.github.io/KaTeX/">链接</a></li>
+  <li>LaTeX Wiki。非常详细的LaTeX Wiki，可以用于日常查阅。<a href="https://en.wikibooks.org/wiki/LaTeX">链接</a></li>
+  <li>KaTeX vs. MathJaX。两种流行的LaTeX前端方案的渲染对比。<a href="https://www.intmath.com/cg5/katex-mathjax-comparison.php">链接</a></li>
+  <li>LaTeX符号转换。LaTeX支持非常多的符号，很难全部都记住，这个网站提供了一种便捷的方案，通过画图给出对应的LaTeX命令。<a href="http://detexify.kirelabs.org/classify.html">链接</a></li>
+</ol>
+</section>
+   
+   <!-- Tag list -->
+  
+  
+
+
+<footer>
+  <div class="tag-list">
+    
+      <div class="meta">Tags</div>
+    
+
+    
+    <a class="button" href="/tags#skill">
+      <p><i class="fa fa-tag fa-fw"></i> skill</p>
+    </a>
+    
+  </div>
+</footer>
+
+    
+</article>
+
+<!-- Disqus -->
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/2016/12/03/%E5%AD%A6%E4%B9%A0Markdown%E8%AF%AD%E6%B3%95.html">
+        学习Markdown语法
+      </a>
+  </div>
+  
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+	<a href="http://localhost:4000/feed.xml" title="Follow RSS feed">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:cy-l@live.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/leeexyz" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/9334887" title="Follow on Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://weibo.com/u/1931250477" title="Follow on WeiBo">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+
+  </body>
+</html>
